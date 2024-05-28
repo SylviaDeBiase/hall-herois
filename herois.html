@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herois</title>
+    <link rel="stylesheet" href="styles.css"> 
+
+</head>
+<body>
+    <h1 class=titulo>Hall dos Heróis</h1>
+
+    <div class=center>
+        <button class=btn onclick="cadastraHeroiPopup()">Cadastra Herói</button>
+        <button class=btn onclick="xpPopup()">Sorteio XP</button>
+    </div>
+    <div class=tabela>
+        <div id="tabela-container"></div>
+     </div>
+     <div class=mensagem>   
+        <div id="container"></div> 
+    </div>
+
+    <!-- Modal de cadastro de Herói -->
+    <div id="cadastraHeroiModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Qual é o nome do seu herói?</p>
+            <form id="form-adicionarHeroi">
+                <input type="text" id="nomeHeroi" placeholder="Nome do Herói" required>
+                <button class=btn type="submit">Adicionar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de atribuição de pontos de experiência -->
+    <div id="atribuiXpModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Atribua os novos pontos do seu personagem!</p>
+                <button class=btn_pq onclick="atribuiXp(50)">50 pts</button>
+                <button class=btn_pq onclick="atribuiXp(108)">108 pts</button>
+                <button class=btn_pq onclick="atribuiXp(223)">223 pts</button>
+                <button class=btn_pq onclick="atribuiXp(355)">355 pts</button>
+                <button class=btn_pq onclick="atribuiXp(500)">500 pts</button>
+            <p id="modalXpText"></p>
+        </div>
+    </div>
+
+    <!-- Modal de aviso dos pontos atribuídos, total atual e Heroi escolhido no sorteio-->
+    <div id="avisoXpModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p id="modalAvisoText"></p>
+        </div>
+    </div>    
+
+    <script src="herois.js"></script>
+</body>
+</html>
